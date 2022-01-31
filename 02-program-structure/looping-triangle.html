@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Looping a Triangle</title>
+    <style>
+      #space {
+        color: #fff;
+        background-color: black;
+        padding-left: 10px;
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="space"></div>
+
+    <script>
+      let space = document.getElementById("space");
+      for (let i = 1; i <= 7; i++) {
+        let hashString = "";
+        for (let j = 0; j < i; j++) {
+          hashString += "#";
+        }
+        console.log(hashString);
+        space.innerHTML += "<br>" + hashString;
+      }
+    </script>
+  </body>
+</html>
