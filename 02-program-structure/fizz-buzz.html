@@ -5,6 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FizzBuzz</title>
+    <style>
+      button {
+        border: none;
+        padding: 5px 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      .num {
+        color: rgb(44, 37, 37);
+      }
+      .Fz {
+        color: rgb(252, 217, 217);
+        background-color: rgb(124, 9, 1);
+      }
+      .Bz {
+        color: rgb(224, 252, 217);
+        background-color: rgb(1, 114, 16);
+      }
+      .FzBz {
+        color: rgb(217, 223, 252);
+        background-color: rgb(1, 24, 124);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="space"></div>
+    <script>
+      const space = document.getElementById("space");
+
+      let num = 1;
+      while (num <= 100) {
+        if (num % 3 === 0 && num % 5 === 0) {
+          console.log("FizzBuzz");
+          addElement("FizzBuzz", "FzBz");
+        } else if (num % 3 === 0) {
+          console.log("Fizz");
+          addElement("Fizz", "Fz");
+        } else if (num % 5 === 0) {
+          console.log("Buzz");
+          addElement("Buzz", "Bz");
+        } else {
+          console.log(num);
+          addElement(num, "num");
+        }
+        num++;
+      }
+
+      function addElement(text, cls) {
+        // create a new button element
+        const newbtn = document.createElement("button");
+        newbtn.classList.add(cls);
+        // and give it some content
+        const newContent = document.createTextNode(text);
+
+        // add the text node to the newly created div
+        newbtn.appendChild(newContent);
+
+        // add the newly created element and its content into the DOM
+        const currentDiv = document.getElementById("space");
+        currentDiv.appendChild(newbtn);
+      }
+    </script>
+  </body>
 </html>
